@@ -3,6 +3,7 @@ const path = require('path');
 const app = express();
 
 app.get('/hello', (req, res) => res.send({ hi: 'there' }))
+app.use(express.static('public'));
 
 if (process.env.NODE_ENV !== 'production') {
   const webpack = require('webpack');
